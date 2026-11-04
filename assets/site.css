@@ -187,3 +187,10 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .fam .sb,.jrn .sb{background:#E8DCC8}
 @media (prefers-reduced-motion:reduce){.fam .pg,.jrn .pg{animation:none}}
 @media(max-width:600px){.phones{display:grid;grid-template-columns:1fr 1fr;gap:18px 12px;justify-items:center}.phones .phone{width:168px;padding:7px;border-radius:30px}.phones .screen{border-radius:24px}.phones .app{transform:scale(.3918)}.phones figcaption{margin-top:10px}}
+
+.badges{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.cta .badges{justify-content:center}
+.who{padding:72px 0}.who .wrap>p:not(.eyebrow){max-width:640px;margin:0 auto 26px;color:var(--muted)}
+.chips{list-style:none;padding:0;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:720px}
+.chips li{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--sand);color:var(--cocoa);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.95rem}
+.chips li span{font-size:1.15rem}
+@media(max-width:600px){.who{padding:52px 0}.chips li{padding:7px 13px;font-size:.88rem}.badge-soon{padding:11px 18px}}
