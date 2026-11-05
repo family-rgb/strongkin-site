@@ -195,3 +195,4 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .chips li{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--sand);color:var(--cocoa);border-radius:999px;padding:8px 16px;font-weight:600;font-size:.95rem}
 .chips li span{font-size:1.15rem}
 @media(max-width:600px){.who{padding:52px 0}.chips li{padding:7px 13px;font-size:.88rem}.badge-soon{padding:11px 18px}}
+.social{display:flex;gap:12px;margin-top:14px}.social a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid rgba(232,200,120,.45);color:#E8C878;transition:background .2s,color .2s}.social a:hover,.social a:focus-visible{background:#E8C878;color:#2A1C12}
