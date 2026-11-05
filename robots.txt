@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://strongkin.net/sitemap.xml
+Sitemap: https://strongkin.com/sitemap.xml
