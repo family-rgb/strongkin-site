@@ -160,6 +160,7 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .mb{padding:16px 18px 18px}.mtt{font:700 26px/32px "Playfair Display";letter-spacing:-.4px}.mp{margin-top:8px;font:italic 700 17px/24px "Playfair Display";color:rgba(74,56,40,.72)}
 .cap-btn,.spk{margin-top:14px;min-height:52px;border-radius:26px;background:#3D2B1F;border:1px solid rgba(74,52,32,.32);display:flex;align-items:center;justify-content:center;gap:8px;font:600 16px "DM Sans";color:#FFF8F0}
 .sec{display:flex;flex-direction:column;gap:14px}.sh2{display:flex;justify-content:space-between;align-items:center}.s2{font:700 24px/30px "Playfair Display";letter-spacing:-.35px}.s3{font:700 28px/34px "Playfair Display";letter-spacing:-.35px}.lk2{font:600 15px "DM Sans";color:#6B4E32}
+.kk{font:700 12px "DM Sans";letter-spacing:1.4px;color:#8A6A44;margin-bottom:-6px}.wl{font:600 16px "DM Sans";color:#3D2B1F;text-align:center;padding:12px;border:1.5px dashed rgba(184,146,90,.6);border-radius:16px}
 .ev{min-height:80px;padding:14px 16px;display:flex;align-items:center;gap:12px}.evf{width:52px;height:52px;border-radius:26px;overflow:hidden;border:1px solid rgba(74,52,32,.32);flex:none}
 .evc{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.evc b{font:700 18px/23px "Playfair Display"}.evc span{font:500 14px/20px "DM Sans";color:rgba(74,56,40,.72)}
 .lv{display:flex;align-items:center;gap:6px;background:#3D2B1F;border-radius:20px;padding:0 14px;min-height:40px;font:600 14px "DM Sans";color:#FFF8F0}
