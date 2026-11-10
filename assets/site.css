@@ -101,7 +101,7 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .screen{background:#E8DCC8}
 .app{position:absolute;top:0;left:0;width:393px;height:852px;transform:scale(.6616);transform-origin:0 0;background:#E8DCC8;color:#1A120C;font-family:"DM Sans",sans-serif;overflow:hidden;line-height:1.3}
 .app img{display:block;max-width:none}
-.app .sb{position:relative;z-index:5;height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 34px 0 46px;font:600 17px "DM Sans";color:#1A120C}
+.app .sb{position:relative;z-index:8;height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 34px 0 46px;font:600 17px "DM Sans";color:#1A120C}
 .app .isl{position:absolute;left:50%;top:11px;transform:translateX(-50%);width:124px;height:36px;border-radius:20px;background:#000}
 .app .sbr{display:flex;align-items:flex-end;gap:2px}.app .sbr i{width:3.5px;background:currentColor;border-radius:1px}.app .sbr i:nth-child(1){height:5px}.app .sbr i:nth-child(2){height:7px}.app .sbr i:nth-child(3){height:9px}.app .sbr i:nth-child(4){height:11px}
 .app .batt{display:inline-block;margin-left:6px;width:25px;height:12px;border:1.5px solid currentColor;border-radius:4px;opacity:.9;background:linear-gradient(90deg,currentColor 78%,transparent 78%) content-box;padding:1.5px}
@@ -183,7 +183,7 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 /* Messages — compact header, full-row inbox, collections grid (no photo hero, no Birthday tile) */
 .msg .sb{color:#1A120C;background:#E8DCC8}
 .msg-pg{padding:8px 0 0;display:flex;flex-direction:column;gap:0}
-.msg-head{display:flex;align-items:center;justify-content:space-between;padding:4px 16px 8px;min-height:42px}
+.msg-head{display:flex;align-items:center;justify-content:space-between;padding:6px 16px 8px;min-height:54px}
 .maya-chip{display:inline-flex;align-items:center;gap:7px;background:rgba(61,43,31,.08);border-radius:18px;padding:4px 10px 4px 4px;font:600 14px "DM Sans";color:#1A120C}
 .msg-title-row{display:flex;align-items:center;justify-content:space-between;padding:4px 16px 0}
 .pageTitle{font:700 32px/40px "Playfair Display";letter-spacing:-.5px;color:#1A120C}
@@ -216,11 +216,16 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .badge-soon{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:12px 22px;border-radius:14px;font-weight:600;cursor:default;user-select:none}
 .badge-soon svg{width:22px;height:22px;fill:#fff}.badge-soon small{display:block;font-size:.7rem;font-weight:400;opacity:.8;line-height:1}.badge-soon span{line-height:1.15;text-align:left}
 .ski{display:inline-block;flex:none;vertical-align:middle}
-/* Family & Journal scroll gently so the whole tab is visible, like a person scrolling */
-.fam .pg,.jrn .pg,.msg .msg-pg{padding-bottom:130px;animation:skscroll 14s ease-in-out infinite}
-.jrn .pg{--sk:-260px}.fam .pg{--sk:-220px}.msg .msg-pg{--sk:-80px}
-@keyframes skscroll{0%,18%{transform:translateY(0)}45%,70%{transform:translateY(var(--sk))}95%,100%{transform:translateY(0)}}
-.fam .sb,.jrn .sb{background:#E8DCC8}
+/* Scroll lives in a clipped pane below the status/notch (and, on Messages, below the fixed compact header).
+   Family/Journal titles scroll away with the page, as in the app. Messages keeps Maya + bell + gold-ring photo fixed.
+   Content may pass behind the floating capsule mid-scroll; padding + --sk keep the last tiles/letters fully visible at the end. */
+.pg-clip{position:absolute;top:54px;left:0;right:0;bottom:0;overflow:hidden;z-index:1}
+.msg-head{position:absolute;top:54px;left:0;right:0;z-index:7;background:#E8DCC8;box-sizing:border-box}
+.msg .pg-clip{top:108px}
+.fam .pg,.jrn .pg,.msg .msg-pg{padding-bottom:110px;animation:skscroll 14s ease-in-out infinite}
+.jrn .pg{--sk:-280px}.fam .pg{--sk:-240px}.msg .msg-pg{--sk:-120px}
+@keyframes skscroll{0%,18%{transform:translateY(0)}45%,70%{transform:translateY(var(--sk,0px))}95%,100%{transform:translateY(0)}}
+.fam .sb,.jrn .sb,.msg .sb{background:#E8DCC8}
 @media (prefers-reduced-motion:reduce){.fam .pg,.jrn .pg,.msg .msg-pg{animation:none}}
 @media(max-width:600px){.phones{display:grid;grid-template-columns:1fr 1fr;gap:18px 12px;justify-items:center}.phones .phone{width:168px;padding:7px;border-radius:30px}.phones .screen{border-radius:24px}.phones .app{transform:scale(.3918)}.phones figcaption{margin-top:10px}}
 
