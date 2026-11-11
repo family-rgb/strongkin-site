@@ -254,7 +254,6 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .founder .letter h2{margin-bottom:.7em}
 .founder .letter p{color:var(--cocoa);font-size:1.12rem;margin:0 0 1em}
 .founder .letter p:last-child{margin-bottom:0}
-.confirm-needed{background:#FFF8F0;border:1px dashed #C9A84C;border-radius:14px;padding:14px 16px;color:var(--brown)!important;font-size:1rem!important}
 @media(max-width:700px){
   .waitlist-row{flex-direction:column}
   .waitlist input[type=email]{min-width:0;width:100%;flex:none}
