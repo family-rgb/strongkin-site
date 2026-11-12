@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StrongKin — Connect families</title>
+  <meta name="description" content="Connect your StrongKin household with another family." />
+  <meta name="robots" content="noindex" />
+  <!-- Moved from the Supabase `join` Edge Function: Supabase rewrites GET text/html on
+       *.supabase.co to text/plain, so browsers showed raw markup. The function now
+       302-redirects here with the same ?token=. Keep in sync with family-rgb/strongkin. -->
+  <style>
+    :root {
+      --bg: #0c0b0a;
+      --surface: #161412;
+      --text: #f5f1e8;
+      --muted: rgba(245, 241, 232, 0.72);
+      --gold: #c9a35a;
+      --rule: rgba(201, 163, 90, 0.28);
+      --max: 42rem;
+    }
+    * { box-sizing: border-box; }
+    html { color-scheme: dark; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, #1c1814 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 3rem 1.35rem 4rem; }
+    .brand {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 1rem;
+    }
+    h1 {
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(1.85rem, 4vw, 2.35rem);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 0 0 0.75rem;
+    }
+    .lead { color: var(--muted); font-size: 1.05rem; margin: 0 0 1.5rem; }
+    .status {
+      font-family: system-ui, -apple-system, sans-serif;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0 0 1.5rem;
+    }
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 1.1rem 1.15rem 1.2rem;
+      margin: 0 0 0.85rem;
+    }
+    .step-num {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.4rem;
+    }
+    .step h2 {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 1.05rem;
+      margin: 0 0 0.45rem;
+    }
+    .step p {
+      margin: 0 0 0.9rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .btn {
+      display: inline-block;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.75rem 1.15rem;
+      border-radius: 12px;
+      background: var(--gold);
+      color: #0c0b0a !important;
+      text-decoration: none !important;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover { opacity: 0.92; text-decoration: none !important; }
+    .btn-secondary {
+      background: transparent;
+      color: var(--gold) !important;
+      border: 1px solid var(--rule);
+    }
+    .token-box {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      word-break: break-all;
+      background: #0c0b0a;
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 0.75rem 0.85rem;
+      color: var(--text);
+      margin: 0 0 0.75rem;
+    }
+    .hidden { display: none !important; }
+    .foot { margin-top: 2rem; color: var(--muted); font-size: 0.9rem; }
+    .foot a { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="brand">StrongKin</p>
+    <h1>Connect your families.</h1>
+
+    <div id="missing" class="hidden">
+      <p class="lead">This connect link is missing a code. Ask your relative to share a fresh link from StrongKin → Profile → Connect a household.</p>
+      <p class="foot">Questions: <a href="mailto:family@strongkin.net">family@strongkin.net</a></p>
+    </div>
+
+    <div id="opening" class="hidden">
+      <p class="lead">Opening StrongKin…</p>
+      <p class="status">If nothing happens, install options will appear in a moment.</p>
+    </div>
+
+    <div id="fallback" class="hidden">
+      <p class="lead">Install StrongKin, then connect your households with this same link.</p>
+
+      <div class="step">
+        <p class="step-num">Step 1</p>
+        <h2>Get StrongKin</h2>
+        <p>Install the beta on your iPhone via TestFlight.</p>
+        <a class="btn" href="https://testflight.apple.com/join/8mdMA8gv">Get StrongKin</a>
+      </div>
+
+      <div class="step">
+        <p class="step-num">Step 2</p>
+        <h2>Already installed it?</h2>
+        <p>Tap below to connect your families. Keep this page open — the connect code stays in the URL.</p>
+        <p class="token-box" id="tokenDisplay"></p>
+        <a class="btn btn-secondary" id="openAppBtn" href="strongkin://connect-household">Tap here to connect your families</a>
+        <p class="status" style="margin-top: 0.85rem; margin-bottom: 0;">
+          Or in StrongKin: Profile → Connect a household → paste the code from the URL after <code>token=</code>.
+        </p>
+      </div>
+
+      <p class="foot">Questions: <a href="mailto:family@strongkin.net">family@strongkin.net</a></p>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var token = (new URLSearchParams(window.location.search).get('token') || '').trim();
+      var missing = document.getElementById('missing');
+      var opening = document.getElementById('opening');
+      var fallback = document.getElementById('fallback');
+      var openAppBtn = document.getElementById('openAppBtn');
+      var tokenDisplay = document.getElementById('tokenDisplay');
+      var OPEN_TIMEOUT_MS = 1600;
+
+      function schemeUrl(t) {
+        return 'strongkin://connect-household?token=' + encodeURIComponent(t);
+      }
+
+      function showFallback() {
+        if (opening) opening.classList.add('hidden');
+        if (fallback) fallback.classList.remove('hidden');
+      }
+
+      if (!token) {
+        if (opening) opening.classList.add('hidden');
+        if (fallback) fallback.classList.add('hidden');
+        if (missing) missing.classList.remove('hidden');
+        return;
+      }
+
+      var deepLink = schemeUrl(token);
+      if (openAppBtn) openAppBtn.href = deepLink;
+      if (tokenDisplay) tokenDisplay.textContent = token;
+
+      if (opening) opening.classList.remove('hidden');
+      if (fallback) fallback.classList.add('hidden');
+      window.location.href = deepLink;
+      window.setTimeout(showFallback, OPEN_TIMEOUT_MS);
+    })();
+  </script>
+</body>
+</html>
