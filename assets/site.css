@@ -260,3 +260,5 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
   .waitlist button.btn{width:100%;justify-content:center;height:48px}
   .founder .letter{padding:28px 22px}
 }
+
+a.badge-soon{text-decoration:none;color:#fff}a.badge-soon:hover{opacity:.92;color:#fff}
