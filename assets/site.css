@@ -183,6 +183,7 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .msg-pg{padding:8px 0 0;display:flex;flex-direction:column;gap:0}
 .msg-head{display:flex;align-items:center;justify-content:space-between;padding:6px 16px 8px;min-height:54px}
 .maya-chip{display:inline-flex;align-items:center;gap:7px;background:rgba(61,43,31,.08);border-radius:18px;padding:4px 10px 4px 4px;font:600 14px "DM Sans";color:#1A120C}
+.maya-chip .caret,.chip .caret{font-size:9px;opacity:.7;margin-left:1px;font-weight:700}
 .msg-title-row{display:flex;align-items:center;justify-content:space-between;padding:4px 16px 0}
 .pageTitle{font:700 32px/40px "Playfair Display";letter-spacing:-.5px;color:#1A120C}
 .rec-txt{font:600 15px "DM Sans";color:#6B4E32;padding:8px 4px}
@@ -214,14 +215,13 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .badge-soon{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:12px 22px;border-radius:14px;font-weight:600;cursor:default;user-select:none}
 .badge-soon svg{width:22px;height:22px;fill:#fff}.badge-soon small{display:block;font-size:.7rem;font-weight:400;opacity:.8;line-height:1}.badge-soon span{line-height:1.15;text-align:left}
 .ski{display:inline-block;flex:none;vertical-align:middle}
-/* Scroll lives in a clipped pane below the status/notch (and, on Messages, below the fixed compact header).
-   Family/Journal titles scroll away with the page, as in the app. Messages keeps Maya + bell + gold-ring photo fixed.
+/* Scroll lives in a clipped pane below the status/notch.
+   Home, Messages, Family, and Journal all scroll the compact header (name chip, bell, gold-ring photo) with the page.
    Content may pass behind the floating capsule mid-scroll; padding + --sk keep the last tiles/letters fully visible at the end. */
 .pg-clip{position:absolute;top:54px;left:0;right:0;bottom:0;overflow:hidden;z-index:1}
-.msg-head{position:absolute;top:54px;left:0;right:0;z-index:7;background:#E8DCC8;box-sizing:border-box}
-.msg .pg-clip{top:108px}
+.msg-head{position:relative;top:auto;background:transparent;box-sizing:border-box;padding:8px 16px 4px;min-height:54px}
 .fam .pg,.jrn .pg,.msg .msg-pg{padding-bottom:110px;animation:skscroll 14s ease-in-out infinite}
-.jrn .pg{--sk:-280px}.fam .pg{--sk:-240px}.msg .msg-pg{--sk:-120px}
+.jrn .pg{--sk:-320px}.fam .pg{--sk:-240px}.msg .msg-pg{--sk:-200px}
 @keyframes skscroll{0%,18%{transform:translateY(0)}45%,70%{transform:translateY(var(--sk,0px))}95%,100%{transform:translateY(0)}}
 .fam .sb,.jrn .sb,.msg .sb{background:#E8DCC8}
 @media (prefers-reduced-motion:reduce){.fam .pg,.jrn .pg,.msg .msg-pg{animation:none}}
@@ -259,4 +259,51 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
   .waitlist input[type=email]{min-width:0;width:100%;flex:none}
   .waitlist button.btn{width:100%;justify-content:center;height:48px}
   .founder .letter{padding:28px 22px}
+}
+
+/* Linen journal / album book covers (Option A, as in the app) */
+.book-shelf{display:flex;gap:12px;align-items:flex-end;padding:0}
+.linen{position:relative;flex:1;aspect-ratio:3/4.05;border-radius:3px 8px 8px 3px;overflow:hidden;background:#C4A574;box-shadow:0 8px 16px rgba(61,43,31,.2)}
+.linen .cloth{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.linen .spine{position:absolute;left:0;top:0;bottom:0;width:13%;background:linear-gradient(90deg,rgba(40,24,14,.35),rgba(40,24,14,.08) 55%,rgba(255,248,240,.08) 80%,transparent);box-shadow:2px 0 0 rgba(255,248,240,.12)}
+.linen .corner{position:absolute;width:22%;height:16%;background:#3D2B1F;z-index:2}
+.linen .corner.tr{top:0;right:0;clip-path:polygon(0 0,100% 0,100% 100%)}
+.linen .corner.br{bottom:0;right:0;clip-path:polygon(100% 0,100% 100%,0 100%)}
+.linen .print{position:absolute;left:22%;right:12%;top:11%;aspect-ratio:1;background:#F3EADF;padding:5px;border-radius:2px;box-shadow:0 1px 3px rgba(61,43,31,.25);z-index:1}
+.linen .print img{width:100%;height:100%;object-fit:cover;display:block}
+.linen .panel{position:absolute;left:18%;right:10%;bottom:14%;text-align:center;z-index:1;color:#3D2B1F}
+.linen .panel b{display:block;font:700 16px/19px "Playfair Display";letter-spacing:.15px}
+.linen.gold .panel,.linen.gold .panel b,.linen.gold .panel i{color:#5C3F1F}
+.linen.cream .panel,.linen.cream .panel b,.linen.cream .panel i{color:#4A3828}
+.linen .panel i{display:block;margin-top:6px;font:700 9px/11px "DM Sans";letter-spacing:1px;text-transform:uppercase;font-style:normal;opacity:.8}
+.linen .ribbon{position:absolute;left:52%;bottom:0;width:8px;height:16px;background:#8B2E2E;border-radius:0 0 2px 2px;z-index:3;transform:translateX(-50%)}
+.linen.cream .ribbon{background:#7A2A2A}
+.create-book{font:600 15px/20px "DM Sans";color:#6B4E32;padding:2px 0 0}
+
+/* Family invite landing (/join) — matches the app and marketing site, not the old dark connect page */
+.join-page{background:var(--cream,#FFF8F0)}
+.join-main{padding:48px 0 80px}
+.join-wrap{max-width:36rem}
+.join-wrap h1{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(2rem,5vw,2.7rem);letter-spacing:-.03em;line-height:1.15;margin:0 0 .6rem;color:var(--ink,#1A120C)}
+.join-lead{font-size:1.15rem;color:var(--muted,#6B4E32);margin:0 0 1.75rem;max-width:28rem}
+.join-code-card{background:#E8DCC8;border:1px solid rgba(74,52,32,.22);border-radius:20px;padding:1.35rem 1.4rem 1.25rem;margin:0 0 2rem;text-align:center;box-shadow:0 10px 24px rgba(61,43,31,.08)}
+.join-code-label{margin:0 0 .45rem;font:700 12px/16px "DM Sans",sans-serif;letter-spacing:1.3px;text-transform:uppercase;color:#6B4E32}
+.join-code{margin:0;font:700 clamp(1.7rem,5vw,2.35rem)/1.2 "Playfair Display",Georgia,serif;letter-spacing:.06em;color:#1A120C;word-break:break-all}
+.join-code-card.is-empty .join-code{opacity:.35;letter-spacing:.12em}
+.join-code-note{margin:.7rem 0 0;font-size:.95rem;color:#6B4E32}
+.join-get h2,.join-steps h2{font-family:"Playfair Display",Georgia,serif;font-weight:700;letter-spacing:-.02em}
+.join-get h2{font-size:1.45rem;margin:0 0 .4rem;color:var(--ink,#1A120C)}
+.join-soon-note{margin:0 0 1rem;color:var(--muted,#6B4E32);font-size:.98rem}
+.join-get .badges{margin-bottom:2.2rem}
+.join-page a.badge-soon{text-decoration:none;color:#fff}
+.join-steps{list-style:none;margin:0 0 2rem;padding:0;display:flex;flex-direction:column;gap:.85rem}
+.join-steps li{display:flex;gap:14px;align-items:flex-start;background:#F3EADF;border:1px solid rgba(74,52,32,.16);border-radius:16px;padding:1rem 1.1rem}
+.join-step-num{flex:none;width:32px;height:32px;border-radius:16px;background:#3D2B1F;color:#FFF8F0;display:flex;align-items:center;justify-content:center;font:700 15px "DM Sans",sans-serif}
+.join-steps h2{font-size:1.05rem;margin:0 0 .25rem;color:#1A120C;font-family:"DM Sans",sans-serif;font-weight:700;letter-spacing:0}
+.join-steps p{margin:0;color:#6B4E32;font-size:.95rem}
+.join-foot{margin:0;color:var(--muted,#6B4E32)}
+.join-foot a{color:#6B4E32;font-weight:600}
+@media(max-width:600px){
+  .join-main{padding:32px 0 64px}
+  .join-code-card{padding:1.1rem 1rem}
 }
