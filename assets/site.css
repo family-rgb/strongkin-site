@@ -154,7 +154,8 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .fh{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.ft{font:700 40px/46px "Playfair Display";letter-spacing:-.6px}.fs{font:400 16px/22px "DM Sans";color:rgba(74,56,40,.72);margin-top:4px}
 .fav{width:48px;height:48px;border-radius:24px;overflow:hidden;flex:none;border:1px solid rgba(74,52,32,.32)}
 .card{background:#E2D2BC;border-radius:22px;border:1px solid rgba(74,52,32,.32);overflow:hidden;box-shadow:0 6px 14px rgba(61,43,31,.12)}
-.mh{position:relative;height:200px;background:#D6C4AA}.mh img{width:100%;height:100%;object-fit:cover}
+.app .card{padding:0}
+.mh{position:relative;height:268px;background:#D6C4AA}.mh img{width:100%;height:100%;object-fit:cover;object-position:top}
 .mchip{position:absolute;left:14px;bottom:14px;background:rgba(30,20,12,.62);border-radius:12px;padding:6px 10px;font:700 11px "DM Sans";letter-spacing:1.2px;color:#FFF8F0}.mchip-inline{font:700 11px/1 "DM Sans";letter-spacing:1.1px;color:#6B4E32;margin-bottom:8px}
 .mb{padding:16px 18px 18px}.mtt{font:700 26px/32px "Playfair Display";letter-spacing:-.4px}.mp{margin-top:8px;font:italic 700 17px/24px "Playfair Display";color:rgba(74,56,40,.72)}
 .cap-btn,.spk{margin-top:14px;min-height:52px;border-radius:26px;background:#3D2B1F;border:1px solid rgba(74,52,32,.32);display:flex;align-items:center;justify-content:center;gap:8px;font:600 16px "DM Sans";color:#FFF8F0}
@@ -168,11 +169,11 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .tc{font:500 13px "DM Sans";color:rgba(74,56,40,.72);text-align:center}
 .past{min-height:64px;padding:12px 14px;display:flex;align-items:center;gap:12px}.pf{width:36px;height:36px;border-radius:18px;overflow:hidden;border:2px solid #E2D2BC;flex:none}.pf.o{margin-left:-22px}
 .past .evc b{font-size:17px}.past .evc span{font-size:13px}
-.j{gap:22px}.lockr{margin-top:-14px;display:flex;align-items:center;gap:6px;font:400 15px "DM Sans";color:rgba(74,56,40,.72)}
+.j{gap:22px;padding-left:16px;padding-right:16px}.lockr{margin-top:-14px;display:flex;align-items:center;gap:6px;font:400 15px "DM Sans";color:rgba(74,56,40,.72)}
 .capc{padding:18px}.ctt{font:700 26px/32px "Playfair Display";letter-spacing:-.3px}.cs{font:400 16px/22px "DM Sans";color:rgba(74,56,40,.72);margin:8px 0 0}
 .sec2{display:flex;gap:10px;margin-top:12px}.sec2 span{flex:1;height:48px;border-radius:24px;border:1px solid rgba(74,52,32,.32);background:#E8DCC8;display:flex;align-items:center;justify-content:center;gap:6px;font:600 15px "DM Sans"}
-.j .sec{gap:12px}.mrow{border-radius:18px;padding:12px;display:flex;align-items:center;gap:12px}.th{width:56px;height:56px;border-radius:14px;object-fit:cover;flex:none}
-.mrow .evc b{font-size:17px;line-height:22px}.mrow .evc span{font-size:13px}.pb{width:36px;height:36px;border-radius:18px;background:rgba(107,78,50,.14);display:flex;align-items:center;justify-content:center;flex:none}
+.j .sec{gap:12px}.mrow{border-radius:18px;padding:12px;display:flex;align-items:center;gap:12px}.th{width:44px;height:44px;border-radius:12px;object-fit:cover;flex:none}
+.mrow .evc b{font-size:17px;line-height:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mrow .evc span{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pb{width:36px;height:36px;border-radius:18px;background:rgba(107,78,50,.14);display:flex;align-items:center;justify-content:center;flex:none}
 .book{border-radius:18px;min-height:96px;padding:12px 14px;display:flex;align-items:center;gap:12px}.ba{width:108px;height:81px;object-fit:contain;flex:none}
 .book .evc b{font-size:17px}.book .evc span{font-size:14px;line-height:19px}
 .phones{gap:24px;flex-wrap:wrap}.phones .phone{width:236px}.phones .app{transform:scale(.5496)}
@@ -221,7 +222,7 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .pg-clip{position:absolute;top:54px;left:0;right:0;bottom:0;overflow:hidden;z-index:1}
 .msg-head{position:relative;top:auto;background:transparent;box-sizing:border-box;padding:8px 16px 4px;min-height:54px}
 .fam .pg,.jrn .pg,.msg .msg-pg{padding-bottom:110px;animation:skscroll 14s ease-in-out infinite}
-.jrn .pg{--sk:-320px}.fam .pg{--sk:-240px}.msg .msg-pg{--sk:-200px}
+.jrn .pg{--sk:-390px}.fam .pg{--sk:-330px}.msg .msg-pg{--sk:-220px}
 @keyframes skscroll{0%,18%{transform:translateY(0)}45%,70%{transform:translateY(var(--sk,0px))}95%,100%{transform:translateY(0)}}
 .fam .sb,.jrn .sb,.msg .sb{background:#E8DCC8}
 @media (prefers-reduced-motion:reduce){.fam .pg,.jrn .pg,.msg .msg-pg{animation:none}}
@@ -278,7 +279,29 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .linen .panel i{display:block;margin-top:6px;font:700 9px/11px "DM Sans";letter-spacing:1px;text-transform:uppercase;font-style:normal;opacity:.8}
 .linen .ribbon{position:absolute;left:52%;bottom:0;width:8px;height:16px;background:#8B2E2E;border-radius:0 0 2px 2px;z-index:3;transform:translateX(-50%)}
 .linen.cream .ribbon{background:#7A2A2A}
-.create-book{font:600 15px/20px "DM Sans";color:#6B4E32;padding:2px 0 0}
+.create-book{font:700 16px/20px "DM Sans";color:#6B4E32;padding:4px 0 0}
+
+
+/* Family / Journal headers match the app: 48px profile, no bell */
+.fam .av,.jrn .av{width:48px;height:48px;border-radius:24px;border:1.5px solid #D8B15A}
+.lk2.see{display:inline-flex;align-items:center;gap:1px;white-space:nowrap}
+.lk2.see .chev{flex:none}
+
+/* Letters envelope — 56×42 as in the app, not a square thumb */
+.envelope{width:56px;height:42px;object-fit:contain;flex:none}
+
+/* Photoreal journal hardcover pair (app cloth frames, 880×1286) */
+.book-shelf{display:flex;gap:14px;align-items:flex-start;padding:0;width:100%}
+.jrn .book-cover,.book-cover{flex:1 1 0;min-width:0;width:auto;height:auto;display:block;filter:drop-shadow(0 8px 16px rgba(61,43,31,.22))}
+/* drop the old CSS-drawn linen rules if a leftover linen node appears */
+.linen{display:none}
+
+/* Messages floating record mic — 64pt Home-style gold, 16px above the tab capsule, 18px from the right */
+.msg-fab{position:absolute;right:18px;bottom:102px;width:64px;height:64px;border-radius:32px;z-index:7;background:linear-gradient(160deg,#DCC4A0,#6B4E32 60%,#3D2A18);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 2px 0 rgba(255,248,240,.35),0 8px 18px rgba(0,0,0,.22);border:1px solid rgba(74,52,32,.32);pointer-events:none}
+.msg-fab .ski{stroke:#3D2B1F}
+
+/* Collection tile captions under Stories / Albums */
+.tc{font:500 13px/18px "DM Sans";color:rgba(74,56,40,.72);text-align:center;padding:0 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* Family invite landing (/join) — matches the app and marketing site, not the old dark connect page */
 .join-page{background:var(--cream,#FFF8F0)}
