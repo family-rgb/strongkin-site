@@ -373,3 +373,7 @@ footer a{color:#EADFCB;margin-right:18px}footer .brand{color:#fff}
 .fam.fb .ev .evc span{font:500 14px/20px "DM Sans";color:#4A3828}
 .fam.fb .lv{border:1px solid rgba(74,52,32,.32)}
 .fam .card.ev{padding:14px 16px}
+/* 2026-11-20 — second waitlist form right after Features (same form + endpoint as hero/CTA) */
+.features-cta{margin:40px auto 0;max-width:34em;text-align:center}
+.features-cta .waitlist{margin:0 auto}
+.features-cta .waitlist-row{justify-content:center}
